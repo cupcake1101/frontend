@@ -1,0 +1,74 @@
+<div class="centered">
+<!-- <div style="margin-top: 10px;" class="card"> -->
+    <div class="card-header">
+        <h3>{{project?'Update':'Add'}} Project</h3>
+    </div>
+    <div class="card-body">
+        <div class="form">
+            <div class="form-group">
+                <label>Project Name</label> 
+                <input [(ngModel)]="projectName" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Created By</label> 
+                <input [(ngModel)]="createdBy" type="text" class="form-control">
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input [(ngModel)]="startDate" type="date" class="form-control">
+                    </div>
+                </div>
+        
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Target End Date</label>
+                        <input [(ngModel)]="targetEndDate" type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Actual End Date</label>
+                        <input [(ngModel)]="actualEndDate" type="date" class="form-control">
+                    </div>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label>Modified By</label>
+                            <input [(ngModel)]="modifiedBy" type="text" class="form-control">
+                            <!-- <select [(ngModel)]="name" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <option selected>Ap</option>
+                            </select> -->
+                        </div>
+                    </div>
+            
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Modified On</label>
+                            <input [(ngModel)]="modifiedOn" type="date" class="form-control">
+                        </div>
+                    </div>
+                </div>
+          
+            <div class="form-group">
+                <button (click) = "onUpdate()" style = "margin-right: 5px; " class="btn-success btn-sm">{{project?'Update':'Add'}}</button>
+                <button (click) = "onCancel()" style = "margin-left: 5px; " class="btn-danger btn-sm">Cancel</button>
+                
+            </div>
+     
+
+</div>
+</div>
+<!-- </div> -->
+</div>
+    
+    
+      
+      
+      
+      
+     

@@ -1,0 +1,118 @@
+ <div class="centered">
+<!-- <div style="margin-top: 10px;" class="card"> -->
+    <div class="card-header">
+        <h2>{{issue ? 'Update' : 'Add'}} bug</h2>
+    </div>
+    <div class="card-body">
+        <div class="form">
+            <div class="form-group">
+                <label>Bug Name</label> 
+                <input [(ngModel)]="issueName" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Bug Description</label> 
+                <input [(ngModel)]="issueDescription" type="text" class="form-control">
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+            <div class="form-group"> 
+                <label>Created By</label> 
+                <input [(ngModel)]="createdBy" type="text" class="form-control">
+            </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Created On</label> 
+                    <input [(ngModel)]="createdOn" type="date" class="form-control">
+                </div>
+                </div>
+        </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label >Priority </label>
+                        <!-- <input  type="date" class="form-control"> -->
+                        <select [(ngModel)]="priority" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected>Set Priority</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                          </select>
+                    </div>
+                </div>
+        
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Severity</label>
+                        <select [(ngModel)]="severity" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected>Set Severity</option>
+                            <option value="Blocker">Blocker</option>
+                            <option value="Critical">Critical</option>
+                            <option value="Major">Major</option>
+                            <option value="Minor">Minor</option>
+                            <option value="Trivial">Trivial</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select [(ngModel)]="status" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected>Set Status</option>
+                            <option value="Active">Active</option>
+                            <option value="InProgress">InProgress</option>
+                            <option value="OnTrack">OnTrack</option>
+                            <option value="Delayed">Delayed</option>
+                            <option value="InTesting">InTesting</option>
+                            <option value="OnHold">OnHold</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Cancelled">Cancelled</option> 
+                            <option value="Planning">Planning</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Invoiced">Invoiced</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Project ID</label>
+                            <select [(ngModel)]="proj" id="pid" class="form-control" >
+                                <option value="">--Select Project --</option>
+                                <option *ngFor='let project of projName' [value]="project.projectId">{{project.projectId}}-{{project.projectName}}</option>
+                                
+                              </select>
+                        </div>
+                    </div>
+             
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Assigned To</label>
+                            
+                            <select [(ngModel)]="prs"  class="form-control">
+                                <option value="">-- Select Person --</option>
+                                <option *ngFor='let person of perName' [value]="person.personId">{{person.personId}}-{{person.personName}}</option>
+                                
+                              </select>
+                        </div>
+                    </div>
+                </div>
+          
+            <div class="form-group">
+                <button (click) = "onUpdate()" style = "margin-left: 5px; " class="btn-success btn-sm">{{issue ? 'Update' : 'Add'}}</button>
+                <button (click) = "onCancel()" style = "margin-left: 5px; " class="btn-danger btn-sm">Cancel</button>
+            </div>
+     
+
+</div>
+</div>
+<!-- </div> --> 
+</div>
+    
+      
+       
+      
+      
+     

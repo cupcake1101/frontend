@@ -1,0 +1,34 @@
+<div class="center-content">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- <a class="navbar-brand" href="#">BTS</a> -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <a style="text-align:left ; font-style: oblique;font-size: larger;" class="navbar-brand" href="#">MAVSTRACK - A Bug Tracking and Detection Tool</a>
+    <!-- <a style="text-align: left;font-style: normal;font-size: x-small;" >A Bug Tracker Tool</a> -->
+    <ul class="navbar-nav ml-auto">
+      <!-- <ul class="nav nav-tabs"> -->
+      <li class="nav-item"><a routerLink="/dashboard" style="font-size: larger;" class="nav-link ">Dashboard</a></li>
+      <li class="nav-item"><a routerLink="/projects" style="font-size: larger;" class="nav-link">Projects</a></li>
+      <li class="nav-item"><a routerLink="/issues" style="font-size: larger;" class="nav-link">Bugs</a></li>
+
+      <li class="nav-item"><a href="http://localhost:8080/" style="font-size: larger;" class="nav-link">Spotbugs</a></li>
+      <li class="nav-item"><a routerLink="/people" style="font-size: larger;" class="nav-link">Community</a></li>
+
+      <li (click)="onLogout()" class="nav-item"><a style="font-size: larger;" class="nav-link">Logout</a></li>
+  </ul>
+
+  </div>
+
+</nav>
+
+ <div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+</div>
+<!-- <div class="center-content">
+  <div class="container-fluid">
+    <h2>BUG TRACKING SYSTEM</h2>
+    <button (click)="onLogin()">Login</button>
+    <button (click)="onSignUp()" style="margin-left: 10px;">Sign Up</button>
+  </div>
+</div> -->

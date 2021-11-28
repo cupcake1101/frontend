@@ -1,0 +1,52 @@
+<div style="margin-top: 30px;" class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="card"> 
+            <div class="card-header">
+                <h2>Sign Up</h2>
+            </div>
+            <div class="card-body">
+                <div class="form">
+        
+            
+                <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+                <div class="form-group">
+                        <input type="text"  [(ngModel)]="personName" class="form-control" name="full_name" placeholder="Full Name" required="required">
+                </div>
+
+                <div class="form-group">
+                            <!-- <input type="text" [(ngModel)]="role" class="form-control" name="role" placeholder="Role" required="required"> -->
+                    <select [(ngModel)]="role" class="form-control" name="role"  required="required">
+                            <option value="" selected data-default>Role</option>
+                            <option value="ProjectManager">ProjectManager</option>
+                            <option value="Developer">Developer</option>
+                            <option value="TestEngineer">TestEngineer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" [(ngModel)]="personEmail" class="form-control" name="email" placeholder="Email" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="password" [(ngModel)]="password" class="form-control" name="password" placeholder="Password"  minlength="5" required="required">
+                </div>
+                <!-- <div class="form-group">
+                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+                </div>         -->
+                <!-- <div class="form-group">
+                    <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+                </div> -->
+                <div class="form-group">
+                    <button (click)="onSignup()" type="submit" class="btn btn-success btn-md btn-block">Sign Up</button>
+                </div>
+            </div>
+        </div>
+            
+            <div class="text-center">Already member of System ? <a href="/login">Sign in</a></div>
+        </div>
+        
+
+    </div>
+    <div class="col-md-4"></div>
+</div>
+ 

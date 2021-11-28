@@ -1,0 +1,44 @@
+<div style="margin-top: 30px ;" class="card">
+     <div class="p-3 mb-2 bg-light">
+      <button *ngIf="isRole" (click)="onCreateProject()" style="margin-bottom: 10px;" type="button" class="btn btn-primary float-right" >Create Project</button>
+      <h2>Projects</h2>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover ">
+        <thead>
+          <tr>
+            <th style="width: 5px;">Sr No.</th>
+            <th style="width: 5px;">Project ID</th>
+            <th >Name</th>
+            <th>Created by</th>
+            <th>Start Date</th>
+            <th>Target End Date</th>
+            <th>Actual End Date</th>
+            <th>Modified by</th>
+            <th>Modified On</th>
+            <!-- <th>Status</th> --> 
+            <th *ngIf="isRole" style="width: 150px;">Actions</th>
+          </tr>
+        </thead>  
+        <tbody>
+          <tr *ngFor="let project of projects; let index = index">
+            <td>{{index + 1}}</td>
+            <td>{{project['projectId']}}</td>
+            <td>{{project['projectName']}}</td>
+            <td>{{project['createdBy']}}</td>
+            <td>{{project['startDate']}}</td>
+            <td>{{project['targetEndDate']}}</td>
+            <td>{{project['actualEndDate']}}</td>
+            <td>{{project['modifiedBy']}}</td>
+            <td>{{project['modifiedOn']}}</td>
+            <!-- <td>{{project['status']}}</td> -->
+            <td *ngIf="isRole">
+              <button (click)="onEdit(project)" style="margin-left: 10px;" class="btn btn-warning btn-sm">Edit</button>
+              <button (click)="onDelete(project)" style="margin-left: 10px;" class="btn btn-danger btn-sm">Delete</button>
+              <!-- <button (click)="onEdit(project)" class="btn btn-warning">Edit</button> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

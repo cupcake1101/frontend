@@ -1,0 +1,39 @@
+<div style="margin-top: 30px ;" class="card">
+    <div class="p-3 mb-2 bg-light">
+     <h2>Community</h2>
+   </div>
+   <div class="card-body">
+     <table class="table table-hover table-bordered">
+       <thead>
+         <tr>
+           <th style="width: 10px;">Sr No</th>
+           <th style="width: 10px;">Person ID</th>
+           <th>Name</th>
+           <th>Email Id</th>
+           <th style="width: 200px;">Role</th>
+           <th >Project Alloted(ID)</th>  
+           <th *ngIf="isRole" style="width: 150px;">Action</th>           
+         </tr>
+       </thead>  
+       <tbody>
+         <tr *ngFor="let person of people; let index = index">
+           <td>{{index + 1}}</td>
+           <td>{{person['personId']}}</td>
+           <td>{{person['personName']}}</td>
+           <td>{{person['personEmail']}}</td>
+           <td>{{person['role']}}</td>
+           <td>{{person['assignedProjects']}}</td>
+           <!-- <td >
+            <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{person['assignedProjects']}}">
+              {{person['assignedProjects']}}
+            </button> 
+            </td> -->
+           <td *ngIf="isRole">
+          <button (click)="onEdit(person)" class="btn-sm btn-info">Assign Project</button>
+           </td>
+         </tr>
+       </tbody>
+     </table>
+   </div>
+ </div>
+ 

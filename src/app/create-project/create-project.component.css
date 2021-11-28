@@ -1,0 +1,11 @@
+/* .card{
+    width:800px;
+} */
+ 
+.centered{
+    border: ridge;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}

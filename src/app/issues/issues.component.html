@@ -1,0 +1,47 @@
+<div style="margin-top: 30px;" class="card">
+    <div class="card-header">
+      <button (click)="onAddBug()" style="margin-bottom: 10px;" type="button" class="btn btn-primary float-right">Add Bug</button>
+      <h2>Bugs Backlog</h2>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <!-- <th>Bug ID</th> -->
+            <th>Bug Name</th>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>Severity</th>
+            <th>Status</th>
+            <th>Project</th>
+            <th>Assigned To</th>
+            <th>Identified By</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bug of issues; let index = index">
+            <td>{{index + 1}}</td>
+            <!-- <td>{{bug['issueId']}}</td> -->
+            <td>{{bug['issueName']}}</td>
+            <td>{{bug['issueDescription']}}</td>
+            <td>{{bug['priority']}}</td>
+            <td>{{bug['severity']}}</td>
+            <td>{{bug['status']}}</td>
+            <td>{{bug['projects']['projectName']}}</td> 
+            <td>{{bug['people']['personName']}}</td> 
+            <td>{{bug['createdBy']}}</td>
+            <td>
+              <button (click)="onEdit(bug)" style="margin-left: 10px;" class="btn btn-warning btn-sm">Edit</button>
+              <!-- <button (click)="onDelete(bug)" style="margin-left: 10px;" class="btn btn-danger btn-sm">Delete</button> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+  <!-- projectName  personName -->
